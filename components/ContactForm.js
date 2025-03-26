@@ -3,13 +3,14 @@ import emailjs from "emailjs-com";
 import { useState } from "react";
 
 const ContactForm = () => {
+  
   const [mailData, setMailData] = useState({
     name: "",
     email: "",
     budget: "",
     subject: "",
     message: "",
-    template: "bentofolio tailwind react",
+    template: "Message from UltraFolio Contact Form",
   });
 
   const { name, email, budget, subject, message, template } = mailData;
@@ -33,10 +34,10 @@ const ContactForm = () => {
     } else {
       emailjs
         .send(
-          "service_gsps4gw", // service id
-          "template_evezi69", // template id
+          "service_vvg8ema", // service id
+          "template_4xd9n1a", // template id
           mailData,
-          "Q3pccdLZhU-mZT7tQ" // public api
+          "7U_XN6RmL8FOtpquU" // public api
         )
         .then(
           (response) => {
@@ -49,7 +50,7 @@ const ContactForm = () => {
               message: "",
               subject: "",
               budget: "",
-              template: "Bentofolio react",
+              template: "Message from UltraFolio Contact Form",
             });
           },
           (err) => {
@@ -125,10 +126,10 @@ const ContactForm = () => {
                   <option disabled={true} value={"select"}>
                     Select budget...
                   </option>
-                  <option value="$5000">$5000</option>
-                  <option value="$5000 - $1000">$5000 - $10000</option>
-                  <option value="$10000 - $2000">$10000 - $20000</option>
-                  <option value="$20000">$20000+</option>
+                  <option value="$1000">$1000</option>
+                  <option value="$1000 - $5000">$1000 - $5000</option>
+                  <option value="$5000 - $10000">$5000 - $10000</option>
+                  <option value="$10000">$10000+</option>
                 </select>
               </div>
             </div>
